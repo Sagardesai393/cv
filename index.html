@@ -7,80 +7,123 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fff;
+      background-color: #d3d3d3; /* Light grey background */
       margin: 0;
       padding: 0;
       color: #333;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     .container {
-      width: 1000px;
-      margin: 0 auto;
+      max-width: 1100px;
+      background-color: #ffffff;
+      margin: 20px auto;
       padding: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      animation: slideIn 1s ease-out;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .left, .right {
+      flex: 1 1 100%;
+    }
+    @media(min-width: 768px) {
+      .left, .right {
+        flex: 1;
+      }
     }
     .header {
       display: flex;
       align-items: center;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 20px;
+      margin-bottom: 30px;
     }
     .header img {
       width: 100px;
       height: 100px;
       object-fit: cover;
-      border-radius: 10px;
+      border-radius: 50%;
       margin-right: 20px;
+      border: 3px solid #007bff;
+      transition: transform 0.3s ease;
+    }
+    .header img:hover {
+      transform: scale(1.1);
     }
     .header h1 {
       margin: 0;
+      font-size: 28px;
+      color: #007bff;
+    }
+    .header p {
+      margin: 2px 0 0 0;
+      font-weight: bold;
     }
     .section {
-      margin-top: 30px;
+      margin-bottom: 30px;
+      animation: fadeIn 1.2s ease-in;
     }
     .section h2 {
       font-size: 20px;
       margin-bottom: 10px;
-      border-bottom: 2px solid #000;
+      color: #007bff;
+      border-bottom: 2px solid #007bff;
+      display: inline-block;
       padding-bottom: 5px;
     }
-    .left, .right {
-      display: inline-block;
-      vertical-align: top;
-    }
-    .left {
-      width: 65%;
-    }
-    .right {
-      width: 30%;
-      margin-left: 5%;
-    }
     ul {
-      margin-top: 0;
+      padding-left: 20px;
+      margin: 10px 0 0 0;
+    }
+    ul li {
+      margin-bottom: 8px;
     }
     .bar {
-      height: 10px;
+      height: 8px;
       background: #ddd;
-      margin-bottom: 10px;
       border-radius: 5px;
       overflow: hidden;
+      margin-bottom: 10px;
     }
     .bar span {
       display: block;
       height: 100%;
-      background: #2196F3;
+      background: linear-gradient(to right, #007bff, #00c6ff);
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .details p {
+      margin: 6px 0;
+    }
+    .right ul li {
+      list-style: square;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <img src="profile.jpeg" alt="Sagar Desai">
-      <div>
-        <h1>Sagar Desai</h1>
-        <p>Sales and Marketing Coordinator</p>
-      </div>
-    </div>
-
     <div class="left">
+      <div class="header">
+        <img src="profile.jpeg" alt="Sagar Desai">
+        <div>
+          <h1>Sagar Desai</h1>
+          <p>Sales and Marketing Coordinator</p>
+        </div>
+      </div>
+
       <div class="section">
         <h2>Profile</h2>
         <p>Dynamic Senior Sales Coordinator with 7 years of experience in driving revenue growth and enhancing customer satisfaction through strategic sales initiatives. Expertise in fostering strong client relationships and leveraging market analysis to uncover new business opportunities. Proficient in coordinating team efforts to optimise performance and deliver impactful results. Committed to using analytical skills and a proactive approach to support sales and marketing objectives effectively.</p>
@@ -115,9 +158,13 @@
     </div>
 
     <div class="right">
-      <div class="section">
+      <div class="section details">
         <h2>Details</h2>
-        <p>703, Dev appartment, Laxmi nagar society, Ravapar Road<br>Morbi, 363641<br>India<br>8460831900<br><a href="mailto:sagardesai393@gmail.com">sagardesai393@gmail.com</a></p>
+        <p>703, Dev appartment, Laxmi nagar society, Ravapar Road</p>
+        <p>Morbi, 363641</p>
+        <p>India</p>
+        <p>Phone: 8460831900</p>
+        <p>Email: <a href="mailto:sagardesai393@gmail.com">sagardesai393@gmail.com</a></p>
       </div>
 
       <div class="section">
